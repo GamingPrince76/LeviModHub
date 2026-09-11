@@ -1,0 +1,21 @@
+{
+  "id": "waila",
+  "name": "Waila",
+  "author": "Unknown",
+  "description": "Displays useful information about the block you are looking at.",
+  "tags": [
+    "Utility",
+    "HUD"
+  ],
+  "releases": [
+    {
+      "version": "1.0.0",
+      "minecraft_versions": [
+        "1.26.45.1"
+      ],
+      "download_type": "ad",
+      "download_url": "https://link-center.net/5698898/lUN3nRnqyKzm",
+      "published_at": "2026-09-10T00:00:00Z"
+    }
+  ]
+}
