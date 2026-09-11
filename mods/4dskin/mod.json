@@ -1,0 +1,21 @@
+{
+  "id": "4dskin",
+  "name": "4DSkin",
+  "author": "DreamGuXiang, MrPokeG",
+  "description": "Adds support for skins with custom geometries.",
+  "tags": [
+    "Cosmetic",
+    "Skins"
+  ],
+  "releases": [
+    {
+      "version": "2.0.0",
+      "minecraft_versions": [
+        "1.26.45.1"
+      ],
+      "download_type": "direct",
+      "download_url": "https://github.com/MrPokeG/Mods/releases/download/v0.0.0/4DSkin.levipack",
+      "published_at": "2026-09-11T00:54:17Z"
+    }
+  ]
+}

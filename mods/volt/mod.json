@@ -1,0 +1,22 @@
+{
+  "id": "volt",
+  "name": "Volt",
+  "author": "Vacuusvita",
+  "description": "An FPS optimizer for Minecraft Bedrock made for weaker phones. It unlocks FPS and reduces shadows, clouds, particles, distant terrain, and entity rendering. FPS Unlock, Heavy Cull, GPU Cuts, No Particles, No Weather, and Low-End Profile are enabled by default.",
+  "icon_url": "https://raw.githubusercontent.com/MrPokeG/Mods/main/volt_icon.png",
+  "tags": [
+    "Performance",
+    "Optimization"
+  ],
+  "releases": [
+    {
+      "version": "1.4.0",
+      "minecraft_versions": [
+        "1.26.45.1"
+      ],
+      "download_type": "direct",
+      "download_url": "https://github.com/MrPokeG/Mods/releases/download/v0.0.0/Volt.levipack",
+      "published_at": "2026-09-11T00:54:17Z"
+    }
+  ]
+}

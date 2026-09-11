@@ -1,0 +1,21 @@
+{
+  "id": "forcecloseoreui",
+  "name": "ForceCloseOreUI",
+  "author": "DreamGuXiang",
+  "description": "Closes Minecraft's OreUI and restores JSON UI.",
+  "tags": [
+    "Utility",
+    "UI"
+  ],
+  "releases": [
+    {
+      "version": "1.0.15",
+      "minecraft_versions": [
+        "1.26.45.1"
+      ],
+      "download_type": "direct",
+      "download_url": "https://github.com/QYCottage/ForceCloseOreUI/releases/download/v1.0.15/libForceCloseOreUI.so",
+      "published_at": "2026-08-09T01:50:59Z"
+    }
+  ]
+}

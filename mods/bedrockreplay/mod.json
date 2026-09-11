@@ -1,0 +1,21 @@
+{
+  "id": "bedrockreplay",
+  "name": "BedrockReplay",
+  "author": "MrPokeG",
+  "description": "A replay mod for Minecraft Bedrock on Android.",
+  "tags": [
+    "Replay",
+    "Recording"
+  ],
+  "releases": [
+    {
+      "version": "0.0.3",
+      "minecraft_versions": [
+        "1.26.45.1"
+      ],
+      "download_type": "direct",
+      "download_url": "https://github.com/MrPokeG/Mods/releases/download/v0.0.0/BedrockReplay.levipack",
+      "published_at": "2026-09-11T00:54:17Z"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 {
   "id": "waila",
   "name": "Waila",
-  "author": "Unknown",
+  "author": "ViableCobra",
   "description": "Displays useful information about the block you are looking at.",
+  "icon_url": "https://raw.githubusercontent.com/MrPokeG/Mods/main/waila_icon.png",
   "tags": [
     "Utility",
     "HUD"
