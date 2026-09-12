@@ -2,11 +2,11 @@
 
 LeviModHub is the external mod catalog used by LeviLauncher on Android.
 
-Mods can still use the old manual catalog format, but GitHub-hosted mods can now use the automatic release system. With the automatic system, a mod only needs to be accepted into LeviModHub once. After that, new releases are picked up from the mod's own GitHub repository.
+Mods can still use the old manual catalog format. Mods can also use automatic updates through GitHub Releases or through a stable `levimod.json` URL.
 
-## Adding a mod with automatic updates
+## GitHub Releases
 
-First, add a `levimod.json` file to the root of your mod repository.
+For mods that publish files through GitHub Releases, add a `levimod.json` file to the root of the mod repository.
 
 A working example can be found here:
 
@@ -45,13 +45,11 @@ Example:
 }
 ```
 
-Then fork LeviModHub and create:
+Then add this to LeviModHub:
 
 ```text
 mods/your-mod-id/mod.json
 ```
-
-Example:
 
 ```json
 {
@@ -65,38 +63,94 @@ Example:
 }
 ```
 
-The folder name and `id` must match. Use lowercase letters, numbers, dots, dashes, or underscores for the ID.
+After the mod is accepted, future GitHub releases are picked up automatically.
 
-Open a pull request after adding the entry. This is normally the only LeviModHub pull request needed for the mod.
+## Custom download links
 
-## Publishing updates
+Mods that use MediaFire, a website, a CDN, or another download service can also update automatically.
 
-For future updates, everything is done from the mod repository.
+The important part is that the `levimod.json` URL stays the same. The actual download link inside it can change every release.
 
-1. Update the version and supported Minecraft versions in `levimod.json`.
-2. Commit the changes.
-3. Create a matching Git tag and GitHub Release.
-4. Upload the `.levipack`, `.so`, or `.zip` file to the GitHub Release.
+A simple way to do this is to keep `levimod.json` in the mod's GitHub repository, even if the mod file itself is hosted somewhere else.
 
-For example, if `levimod.json` contains:
+Example:
 
 ```json
-"version": "1.5.0"
+{
+  "schema_version": 1,
+  "id": "your-mod-id",
+  "version": "2.0.0",
+  "minecraft_versions": [
+    "1.26.45.1"
+  ],
+  "published_at": "2026-09-13T00:00:00Z",
+  "info": {
+    "name": "Your Mod",
+    "author": "Your Name",
+    "description": "A short description of your mod.",
+    "homepage_url": "https://github.com/you/your-mod",
+    "tags": [
+      "Utility"
+    ]
+  },
+  "download": {
+    "type": "browser",
+    "url": "https://example.com/your-new-download-link"
+  }
+}
 ```
 
-create the tag:
+Then add this to LeviModHub:
 
-```text
-v1.5.0
+```json
+{
+  "id": "your-mod-id",
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/you/your-mod/main/levimod.json",
+  "max_releases": 20,
+  "enabled": true
+}
 ```
 
-LeviModHub checks approved repositories automatically and updates the catalog when a new release is found. There is no need to open another LeviModHub pull request for normal version updates.
+For a page such as MediaFire, use:
 
-The `levimod.json` file must be committed before the release tag is created. This lets each release keep its own Minecraft version information.
+```json
+"type": "browser"
+```
+
+For a direct `.levipack`, `.so`, or `.zip` URL, use:
+
+```json
+"download": {
+  "type": "direct",
+  "url": "https://example.com/YourMod.levipack"
+}
+```
+
+If a direct URL does not end with the real file name, add `name`:
+
+```json
+"download": {
+  "type": "direct",
+  "url": "https://example.com/download?id=123",
+  "name": "YourMod.levipack"
+}
+```
+
+When releasing a new version, only update the mod's own `levimod.json`:
+
+- `version`
+- `minecraft_versions`
+- `published_at`
+- `download.url`
+
+LeviModHub checks the metadata automatically. No new LeviModHub pull request is needed for normal updates.
+
+Previously published versions are kept from the existing catalog, up to `max_releases`.
 
 ## Minecraft versions
 
-List the Minecraft versions supported by that release:
+Use an exact Minecraft version:
 
 ```json
 "minecraft_versions": [
@@ -113,7 +167,7 @@ Multiple versions can be listed:
 ]
 ```
 
-`X` can be used for a known compatible version range:
+`X` can be used for a compatible range:
 
 ```json
 "minecraft_versions": [
@@ -121,7 +175,7 @@ Multiple versions can be listed:
 ]
 ```
 
-`>=` can be used when a mod supports one Minecraft version and every newer version:
+`>=` can be used when a mod supports one version and every newer version:
 
 ```json
 "minecraft_versions": [
@@ -129,47 +183,8 @@ Multiple versions can be listed:
 ]
 ```
 
-This matches `1.26.45.1`, `1.26.46.3`, `1.26.50.1`, `1.27.0`, and newer versions.
-
-## Release files
-
-By default, LeviModHub can use these files from GitHub Releases:
-
-- `.levipack`
-- `.so`
-- `.zip`
-
-If a release contains more than one supported file, newer LeviLauncher versions can let the user choose which one to install.
-
-`release_assets` is optional. It can be used to choose which files should appear or give them better names:
-
-```json
-"release_assets": {
-  "include": [
-    "*.levipack",
-    "*.so"
-  ],
-  "exclude": [
-    "*debug*"
-  ],
-  "labels": {
-    "YourMod.levipack": "LeviPack",
-    "libYourMod.so": "Native library"
-  }
-}
-```
-
-GitHub-based entries use files attached to the approved repository's GitHub Releases. External or paid download links are not accepted through `levimod.json`.
-
 ## Existing mods
 
-The old manual `mod.json` format is still supported. Existing mods do not need to migrate immediately.
+The old manual `mod.json` format is still supported.
 
-Developers can move to the automatic GitHub system whenever they are ready. Once migrated, future release updates can be handled completely from their own repository.
-
-## Notes
-
-- Draft GitHub Releases are ignored.
-- Prereleases are ignored unless `include_prereleases` is enabled in LeviModHub.
-- `max_releases` controls how many recent GitHub Releases are checked and kept in the catalog.
-- The mod version in `levimod.json` must match the GitHub release tag.
+Developers can move to either `provider: "github"` or `provider: "url"` when they are ready.
