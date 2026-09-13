@@ -4,7 +4,7 @@ import os
 import re
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlparse
+from urllib.parse import quote, urljoin, urlparse
 from urllib.request import Request, urlopen
 
 
@@ -720,12 +720,20 @@ def mod_info_from_url_manifest(
         result["homepage_url"] = ""
 
     explicit_icon = info.get("icon_url")
+    icon_path = info.get("icon")
     local_icon = registration_source.parent / "icon.png"
 
     if isinstance(explicit_icon, str) and explicit_icon.strip():
         result["icon_url"] = require_https(
             explicit_icon.strip(),
             "icon_url",
+            metadata_url,
+        )
+    elif isinstance(icon_path, str) and icon_path.strip():
+        resolved_icon = urljoin(metadata_url, icon_path.strip())
+        result["icon_url"] = require_https(
+            resolved_icon,
+            "icon",
             metadata_url,
         )
     elif local_icon.is_file():
