@@ -1,10 +1,7 @@
 {
   "id": "btbcs",
-  "provider": "github",
-  "repository": "Viablecobra/Mods/btbcs",
-  "metadata_path": "levimod.json",
-  "bootstrap_ref": "main",
-  "include_prereleases": false,
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/Viablecobra/Mods/main/btbcs/levimod.json",
   "max_releases": 20,
   "enabled": true
 }
