@@ -1,10 +1,7 @@
 {
   "id": "uvt",
-  "provider": "github",
-  "repository": "Viablecobra/Mods/uvt",
-  "metadata_path": "levimod.json",
-  "bootstrap_ref": "main",
-  "include_prereleases": false,
+  "provider": "url",
+  "metadata_url": "https://raw.githubusercontent.com/Viablecobra/Mods/main/uvt/levimod.json",
   "max_releases": 20,
   "enabled": true
 }
