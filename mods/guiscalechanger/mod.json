@@ -1,7 +1,0 @@
-{
-  "id": "guiscalechanger",
-  "provider": "url",
-  "metadata_url": "https://dl.nexcaise.my.id/files/GuiScaleChanger-levimod.json",
-  "max_releases": 20,
-  "enabled": true
-}
