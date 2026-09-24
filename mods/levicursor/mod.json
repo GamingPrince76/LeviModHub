@@ -1,0 +1,9 @@
+{
+  "id": "levicursor",
+  "provider": "github",
+  "repository": "GamingPrince76/LeviCursor",
+  "metadata_path": "levimod.json",
+  "include_prereleases": false,
+  "max_releases": 20,
+  "enabled": true
+}
