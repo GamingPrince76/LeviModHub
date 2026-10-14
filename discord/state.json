@@ -4,14 +4,14 @@
   "guild_id": "1124235469245382698",
   "mods": {
     "test": {
-      "message_id": "1559929605450637415",
-      "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/discord-test-1559929605450637415-metadata-ab3b8033df82f395/levimod.json",
+      "message_id": "1560001595402489956",
+      "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/discord-test-1560001595402489956/levimod.json",
       "owner_id": "793747371199823873",
-      "release_tag": "discord-test-1559929605450637415",
+      "release_tag": "discord-test-1560001595402489956",
       "thread_id": "1559927727014813837",
-      "updated_at": "2026-10-14T14:42:47.084882Z",
+      "updated_at": "2026-10-14T18:50:17.778882Z",
       "url_schema": 2,
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   },
   "schema_version": 1
