@@ -2,6 +2,6 @@
   "enabled": true,
   "id": "test",
   "max_releases": 20,
-  "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/untagged-04314acb558e6772e075/levimod.json",
+  "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/discord-test-1559929605450637415-metadata-ab3b8033df82f395/levimod.json",
   "provider": "url"
 }

@@ -5,11 +5,12 @@
   "mods": {
     "test": {
       "message_id": "1559929605450637415",
-      "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/untagged-04314acb558e6772e075/levimod.json",
+      "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/discord-test-1559929605450637415-metadata-ab3b8033df82f395/levimod.json",
       "owner_id": "793747371199823873",
       "release_tag": "discord-test-1559929605450637415",
       "thread_id": "1559927727014813837",
-      "updated_at": "2026-10-14T14:04:52.422290Z",
+      "updated_at": "2026-10-14T14:42:47.084882Z",
+      "url_schema": 2,
       "version": "1.0.0"
     }
   },
