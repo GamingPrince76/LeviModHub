@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "id": "test",
+  "max_releases": 20,
+  "metadata_url": "https://github.com/QYCottage/LeviModHub/releases/download/untagged-04314acb558e6772e075/levimod.json",
+  "provider": "url"
+}
